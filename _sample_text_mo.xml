@@ -1,0 +1,2 @@
+<?xml version="1.0" ?>
+<request version="3.0" protocol="wmp" type="deliver"><account id="000-000-107-89871"/><destination ton="3" address="73250"/><source carrier="383" ton="0" address="+19207503321"/><option datacoding="7bit" /><message udhi="false" data="73746f70"/><ticket id="45101-1215M-1211U-45Q8L"/></request>

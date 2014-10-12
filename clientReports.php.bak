@@ -1,0 +1,60 @@
+<?php require_once('dbConnect/textServ.php'); ?>
+<?php
+session_start();
+	if(!isset($_SESSION['username'])){
+  		header("Location: http://www.uwagibox.com/nonClient.php");
+		exit;
+	}
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; cha  rset=utf-8" />
+<title>Untitled Document</title>
+<link href="http://www.uwagibox.com/main.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+</style>
+</head>
+<body>
+<div id=contentDiv>
+
+	<div id=adHeaderDiv>
+		<?php
+			echo "You are logged in as <b>$_SESSION[username]</b>&nbsp;&nbsp;&nbsp;<a href=http://www.uwagibox.com/logout.php>Click Here to Log Out</a><br>";
+			echo "<br>";
+			print "<font size=+2 color=#333333><b>Client Reports</b></font>";
+		?>
+	</div>
+
+    <div id=triviaBody>
+    	<?php
+			$siteID = $_SESSION['siteID'];
+			
+			$result = mysql_query("SELECT app_redeemed FROM site WHERE siteID = '$siteID'")
+				or die(mysql_error());
+			$row = mysql_fetch_array($result);
+			$redeemed = $row['app_redeemed'];
+			
+			$result2 = mysql_query("SELECT DISTINCT userID FROM trivia_log WHERE siteID = '$siteID'")
+					or die(mysql_error());
+			$num_rows2 = mysql_num_rows($result2);
+
+				if ($num_rows2 < 100) {		
+					print "This feature will be available to those establishments that have had enough Uwagi users log into their establishment to enable reports to be generated.<br><br>";
+					print "This is currently set at 100 users who have logged in or used the trivia service in your establishment.<br><br>";
+					print "Your currently have '$num_rows2' unique users.";
+					print "<br>";
+					print "<br>";
+					print "<b>Drinks redeemed from App:</b> " . $redeemed;
+				}
+				else {
+					print "Your currently have '$num_rows' unique users & are eligible to have reports displayed.<br><br>";
+					print "We seem to have an error on our end.<br><br>";
+					print "We'll make sure to whip whoever needs whipping & get that report up here for you as soon as we find out who is responsible.";
+				}
+		?>
+
+	</div>
+
+</div>

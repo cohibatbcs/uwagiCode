@@ -1,0 +1,111 @@
+body
+{
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 12px;
+}
+
+h2
+{
+  font-weight: bold;
+  font-size: 15px;
+}
+
+input[type="text"], input[type="password"], input[type="submit"], .submit, .text
+{
+  border: 1px solid rgb(144, 163, 169);
+  margin: 5px;
+  padding: 3px;
+}
+
+input[type="text"], input[type="password"], .text
+{
+  font-size: 12px;
+  width: 520px;
+  background-color: #fff;
+}
+
+input[type="submit"]
+{
+  font-size: 8pt;
+  width: 125px;
+  background-color: rgb(243, 243, 243);
+}
+
+#navcontainer ul
+{
+  padding-left: 0;
+  margin-left: 0;
+  background-color: #FFA042;
+  color: White;
+  float: left;
+  width: 100%;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 10px;
+}
+
+#navcontainer ul li { display: inline; }
+
+#navcontainer ul li a
+{
+  padding: 0.2em 1em;
+  background-color: #FFA042;
+  color: #000;
+  text-decoration: none;
+  float: left;
+  border-right: 1px solid #fff;
+}
+
+#navcontainer ul li a:hover, #navcontainer ul li #current
+{
+  background-color: #000;
+  color: #fff;
+}
+
+#content
+{
+  clear: both;
+  padding-top: 10px;
+}
+
+.message 
+{
+  border:solid 1px #DEDEDE;
+  background:#FCF9CE;
+  color:#222222;
+  padding:4px;
+  text-align:center;
+  margin: 0 5px 20px 5px;
+}
+
+#feedlist {
+        padding: 1px;
+        margin-left: 0;
+        background-color: #FFD953;
+        width: 240px;
+        font-size: 10px;
+}
+
+#feedlist li {
+        list-style: none;
+        margin: 0;
+        padding: 1px;
+}
+
+#feedlist li a {
+        text-decoration: none;
+        display: block;
+        background-color: #FFFFA4;
+        padding: 2px;
+}
+
+#feedcontainer li a:hover
+{
+        background-color: #FFA042;
+        color: #fff;
+}
+
+#head a:link, #head a:visited {
+        background-color: #000;
+        color: #fff;
+}
+

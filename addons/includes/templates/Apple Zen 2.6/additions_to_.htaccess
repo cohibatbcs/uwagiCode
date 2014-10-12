@@ -1,0 +1,10 @@
+
+## Add these to your .htaccess file so that only one way to your site exists, either http://yoursite.com and http://www.yoursite.com ... the following adds the www if it's missing:
+
+RewriteEngine OnRewriteCond %{HTTP_HOST} ^yoursite.com$ [NC]RewriteRule ^(.*)$ http://www.yoursite.com/$1 [R=301,L]
+
+## If you'd like your site to go to http://mysite.com instead of http://www.mysite.com, add these changes instead:
+##RewriteEngine On##RewriteCond %{HTTP_HOST} ^www.yoursite.com$ [NC]##RewriteRule ^(.*)$ http://yoursite.com/$1 [R=301,L]
+
+## the following makes sure the correct mime type is sent for the .htc file
+AddType text/x-component .htc
